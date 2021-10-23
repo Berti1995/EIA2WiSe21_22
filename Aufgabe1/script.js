@@ -1,10 +1,8 @@
 var subject = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
 var verb = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
 var object = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
-console.log(subject, verb, object);
 for (var i = 6; i >= 1; i--) {
     console.log(i);
-    console.log(getVerse(subject, verb, object));
 }
 function getVerse(_subject, _verb, _object) {
     var vers = "";
