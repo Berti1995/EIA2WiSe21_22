@@ -26,6 +26,3 @@ for (let index: number = 0; index < eingabe.length; index++) {
    // cards.style.display = "none";
     //console.log(cards);
 
-    if(myArray2.lenght = myArry3.lenght){
-        if(myArray2 = myArray3){
-        alert

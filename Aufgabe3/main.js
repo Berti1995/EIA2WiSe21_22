@@ -1,32 +1,102 @@
-var Aufgabe3;
-(function (Aufgabe3) {
+var Aufgabe5;
+(function (Aufgabe5) {
     window.addEventListener("load", handleLoad);
-    var span;
-    var div0;
-    var div1;
-    function handleLoad() {
-        document.addEventListener("mousemove", setInfoBox);
-        document.addEventListener("click", logInfo);
-        document.addEventListener("keyup", logInfo);
-        document.body.addEventListener("click", logInfo);
-        document.body.addEventListener("keyup", logInfo);
-        div0 = document.getElementById("div0");
-        div1 = document.getElementById("div1");
+    var eingabe;
+    var nodeList;
+    var font;
+    var cardSize;
+    var backgroundColor1;
+    var selectField;
+    var body = document.getElementById("body1");
+    function handleLoad(_event) {
+        eingabe = document.getElementById("kartenName");
+        var form = document.querySelector("div#formSettings");
+        form.addEventListener("change", handleChange);
+        document.getElementById("startButton").addEventListener("click", gameStart);
     }
-    function setInfoBox(_event) {
-        span = document.getElementById("span");
-        var x = _event.clientX;
-        var y = _event.clientY;
-        var target = _event.target;
-        span.style.left = x + "px";
-        span.style.top = y + "px";
-        span.innerHTML = "X:" + x + "px <br> Y:" + y + "px <br>" + target;
+    function handleChange(_event) {
+        var formData = new FormData(document.forms[0]);
+        var nodeList = document.querySelectorAll("input");
+        var font = document.querySelector("select");
+        var cardSize = nodeList[0].value;
+        var backgroundColor1 = nodeList[1].value;
+        console.log(font.value);
+        // for (let entry of formData) {
+        //     console.log(formData);
+        // }
+        //console.log(_event);
+        console.log(nodeList);
+        eingabe = document.getElementById("kartenName");
+        // console.log(backgroundColor1);
+        // console.log(font.value);
+        console.log(nodeList);
     }
-    function logInfo(_event) {
-        console.log(_event);
-        console.log(_event.type);
-        console.log(_event.currentTarget);
-        console.log(_event.target);
+    function gameStart() {
+        var formData = new FormData(document.forms[0]);
+        var nodeList = document.querySelectorAll("input");
+        var font = document.querySelector("select");
+        var cardSize = nodeList[0].value;
+        var backgroundColor1 = nodeList[1].value;
+        var cardBackgroundColor = nodeList[2].value;
+        var fontColor = nodeList[3].value;
+        var timer = nodeList[4].value;
+        var timerNumber = parseInt(timer);
+        document.getElementById("formSettings").classList.add("ishidden");
+        var array1 = eingabe.value.split("");
+        var eingabe2 = eingabe.value;
+        var arrayCards2 = eingabe2.split("");
+        var arrayCards3 = [];
+        var _loop_1 = function (index) {
+            var zufallsZahl = Math.floor(Math.random() * (array1.length));
+            var card = document.createElement("div");
+            card.classList.add("Card" + index);
+            document.body.appendChild(card);
+            card.innerHTML = array1[zufallsZahl];
+            //console.log(array1[zufallsZahl]);
+            array1.splice(zufallsZahl, 1);
+            //console.log(array1);
+            card.style.width = cardSize + "px";
+            card.style.height = cardSize + "px";
+            document.body.style.backgroundColor = backgroundColor1;
+            card.style.backgroundColor = cardBackgroundColor;
+            card.style.fontFamily = font.value.toString();
+            card.style.color = fontColor;
+            card.style.fontSize = "font-size: fit-width | fit-height | fit-height-precise;";
+            card.style.textAlign = "center";
+            card.style.display = "grid";
+            card.style.borderStyle = "solid";
+            card.style.borderWidth = "5px";
+            card.style.borderColor = "black";
+            selectField = document.getElementById("formSettings");
+            selectField.classList.add("isHidden");
+            setTimeout(hideCards2, (arrayCards2.length * 1000));
+            function hideCards2() {
+                card.classList.add("hide");
+            }
+            setTimeout(youLost, (arrayCards2.length + timerNumber * 1000));
+            function youLost() {
+                alert("you lost");
+            }
+            card.addEventListener("click", startGame);
+            function startGame() {
+                card.classList.remove("hide");
+                arrayCards3.push(card.innerHTML);
+                if ((arrayCards2.length === arrayCards3.length)) {
+                    if (JSON.stringify(arrayCards2) == JSON.stringify(arrayCards3)) {
+                        alert("you won");
+                    }
+                    else {
+                        alert("you lost");
+                    }
+                }
+            }
+        };
+        //let bla: string = eingabe;
+        // console.log(array1);
+        //debugger;
+        for (var index = 0; index < eingabe.value.length; index++) {
+            _loop_1(index);
+        }
     }
-})(Aufgabe3 || (Aufgabe3 = {}));
+})(Aufgabe5 || (Aufgabe5 = {}));
 //# sourceMappingURL=main.js.map

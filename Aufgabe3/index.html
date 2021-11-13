@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -9,11 +9,67 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <div class="div3" id="div3">
-        <h1> Events-Exercise</h1>
-        <div class="div0" id="div0"></div>
-        <div class="div1" id="div1"></div>
-       <h3> <span id="span"></span></h3>
-    </div>
+    <body id="body1">
+        <form id="form">
+            <div id="formSettings">
+    
+                <h2>Settings</h2>
+    
+                <fieldset class="fieldsets" id="fsSize">
+    
+                    <legend>Choose the size of your cards</legend>
+    
+                    <input type="range" id="size" name="size" min="50" max="250" step="50"> <br />
+    
+                </fieldset>
+    
+                <fieldset class="fieldsets" id="fsColor">
+    
+                    <legend>Pick the color for your...</legend>
+    
+                    <label for="backgroundColor">Background</label>
+                    <input type="color" id="backgroundColor" name="backgroundColor" value="#ffffff">
+    
+                    <label for="cardColor">Cards</label>
+                    <input type="color" id="cardColor" name="cardColor" value="#f6b73c">
+    
+                    <label for="fontColor">Font</label>
+                    <input type="color" id="fontColor" name="fontColor" value="#000000"> <br />
+    
+                </fieldset>
+                <fieldset class="fieldsets" id="fsFont">
+    
+                    <legend>Pick your font</legend>
+    
+                        <div id= fonts>
+                        <select>
+                            <option value= "Arial, Helvetica, sans-serif" type= "radio" id= "arial" name="font">Arial</option>
+                            <option value= "'Times New Roman', Times, serif" type= "radio" id= "timesNew" name="font">Times New Roman</option>
+                            <option value= "sans-serif" type= "radio" id= "comicSans" name="font">Comic Sans</option>
+                        </select>
+                    </div>
+                </fieldset>
+    
+                <fieldset class="fieldsets" id="fsTime">
+    
+                    <legend>Set your gametime</legend>
+    
+                    <input type="number" id="time" name="time" min="5" max="120" step="5">
+                    <label for="time">seconds</label> <br />
+    
+                </fieldset>
+    
+                <fieldset class="fieldsets" id="fsGameword">
+    
+                    <legend>Choose your word!</legend>
+    
+                    <input type="text" id="kartenName" name="kartenName" value="" required minlength="2" maxlength="14">
+    
+                </fieldset>
+    
+                <button type="button" id="startButton">START</button>
+            </div>
+        </form>
+        <div id="container"></div>
 </body>
 </html>
