@@ -1,5 +1,5 @@
-var Aufgabe5;
-(function (Aufgabe5) {
+var Aufgabe3;
+(function (Aufgabe3) {
     window.addEventListener("load", handleLoad);
     var eingabe;
     var nodeList;
@@ -8,6 +8,7 @@ var Aufgabe5;
     var backgroundColor1;
     var selectField;
     var body = document.getElementById("body1");
+    var divcontainer;
     function handleLoad(_event) {
         eingabe = document.getElementById("kartenName");
         var form = document.querySelector("div#formSettings");
@@ -20,16 +21,7 @@ var Aufgabe5;
         var font = document.querySelector("select");
         var cardSize = nodeList[0].value;
         var backgroundColor1 = nodeList[1].value;
-        console.log(font.value);
-        // for (let entry of formData) {
-        //     console.log(formData);
-        // }
-        //console.log(_event);
-        console.log(nodeList);
         eingabe = document.getElementById("kartenName");
-        // console.log(backgroundColor1);
-        // console.log(font.value);
-        console.log(nodeList);
     }
     function gameStart() {
         var formData = new FormData(document.forms[0]);
@@ -41,6 +33,8 @@ var Aufgabe5;
         var fontColor = nodeList[3].value;
         var timer = nodeList[4].value;
         var timerNumber = parseInt(timer);
+        divcontainer = document.querySelector("container");
+        console.log(divcontainer);
         document.getElementById("formSettings").classList.add("ishidden");
         var array1 = eingabe.value.split("");
         var eingabe2 = eingabe.value;
@@ -50,11 +44,9 @@ var Aufgabe5;
             var zufallsZahl = Math.floor(Math.random() * (array1.length));
             var card = document.createElement("div");
             card.classList.add("Card" + index);
-            document.body.appendChild(card);
+            divcontainer.appendChild(card);
             card.innerHTML = array1[zufallsZahl];
-            //console.log(array1[zufallsZahl]);
             array1.splice(zufallsZahl, 1);
-            //console.log(array1);
             card.style.width = cardSize + "px";
             card.style.height = cardSize + "px";
             document.body.style.backgroundColor = backgroundColor1;
@@ -91,12 +83,9 @@ var Aufgabe5;
                 }
             }
         };
-        //let bla: string = eingabe;
-        // console.log(array1);
-        //debugger;
         for (var index = 0; index < eingabe.value.length; index++) {
             _loop_1(index);
         }
     }
-})(Aufgabe5 || (Aufgabe5 = {}));
+})(Aufgabe3 || (Aufgabe3 = {}));
 //# sourceMappingURL=main.js.map
