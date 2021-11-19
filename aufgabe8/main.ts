@@ -30,9 +30,9 @@ namespace Canvas {
     let rC4: number = Math.random() * 360;
     let n: number = Math.random() * 100;
     crc2.beginPath();
-    crc2.moveTo(_x, _y);
-    crc2.lineTo(_x, _y + _n);
-    crc2.lineTo(_x + _n , _y + _n);
+    crc2.moveTo(_x +20 , _y + 50);
+    crc2.lineTo(_x, _y + n);
+    crc2.lineTo(_x + n , _y + n);
     crc2.closePath();
 
     crc2.fillStyle = "hsl(" + rC2 + "," + rC + "%," + rC + "%)";
@@ -44,6 +44,8 @@ namespace Canvas {
   function drawQuadrat(_x: number, _y: number): void {
     let rC3: number = Math.random() * 75;
     let rC4: number = Math.random() * 360;
+    let rC: number = Math.random() * 100;
+    let rC2: number = Math.random() * 360;
     
     crc2.beginPath();
     crc2.fillRect(_x, _y, Math.random() * 100, Math.random() * 100);
@@ -52,7 +54,7 @@ namespace Canvas {
     crc2.strokeStyle = "blue";
     crc2.lineWidth = 5;
     crc2.stroke();
-    crc2.strokeStyle = "hsl(" + rC4 + "," + rC3 + "%," + rC3 + "%)";
+    crc2.strokeStyle = "hsl(" + rC2 + "," + rC + "%," + rC + "%)";
     crc2.fill();
   }
 

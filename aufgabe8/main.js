@@ -23,9 +23,9 @@ var Canvas;
         var rC4 = Math.random() * 360;
         var n = Math.random() * 100;
         crc2.beginPath();
-        crc2.moveTo(_x, _y);
-        crc2.lineTo(_x, _y + _n);
-        crc2.lineTo(_x + _n, _y + _n);
+        crc2.moveTo(_x + 20, _y + 50);
+        crc2.lineTo(_x, _y + n);
+        crc2.lineTo(_x + n, _y + n);
         crc2.closePath();
         crc2.fillStyle = "hsl(" + rC2 + "," + rC + "%," + rC + "%)";
         crc2.strokeStyle = "hsl(" + rC4 + "," + rC3 + "%," + rC3 + "%)";
@@ -34,13 +34,15 @@ var Canvas;
     function drawQuadrat(_x, _y) {
         var rC3 = Math.random() * 75;
         var rC4 = Math.random() * 360;
+        var rC = Math.random() * 100;
+        var rC2 = Math.random() * 360;
         crc2.beginPath();
         crc2.fillRect(_x, _y, Math.random() * 100, Math.random() * 100);
         crc2.fillStyle = "hsl(" + rC4 + "," + rC3 + "%," + rC3 + 25 + "%)";
         crc2.strokeStyle = "blue";
         crc2.lineWidth = 5;
         crc2.stroke();
-        crc2.strokeStyle = "hsl(" + rC4 + "," + rC3 + "%," + rC3 + "%)";
+        crc2.strokeStyle = "hsl(" + rC2 + "," + rC + "%," + rC + "%)";
         crc2.fill();
     }
     function drawCircle(_x, _y, _n) {
