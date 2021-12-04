@@ -1,4 +1,49 @@
 #restart{
+    cursor: pointer;
     display: none;
+    color: lightgray;     
+    background-color: darkslategray;             
+    margin: auto;        
+    font-size: 24px;    
+    padding: 10px 40px;    
+    border-radius: 12px;     
+    border-color: lightgray;     
+    transition-duration: .4s;    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0, 0.2);  
+}  
+#restart:hover{ 
+    background-color: lightgray; color: darkslategray;
+}
+
+#pic{
+    position: fixed;
+    background: url(SP2204PRI.png);
+    background-position: center;
+    height: 300px;
+    margin: auto;
+    width: 50%;
+    bottom: 5px;
+    left: 25%;
+  
+}
+
+#box{
+    justify-content: center;
+    text-align: center;
+}
+
+body{
+background-color: orange;
+}
+
+#food{
+    font-size: 5vh;
+    font-family: fantasy;
+    text-align: center;
+}
+
+#animals{
+    color: brown;
+    text-align: center; 
 }
 

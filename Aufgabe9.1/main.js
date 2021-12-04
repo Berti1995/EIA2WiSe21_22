@@ -20,7 +20,7 @@ var animal1 = new Animal("Dog", "Hadis", "wuff", "Meat", 5, 50);
 var animal2 = new Animal("Cat", "Apollon", "miau", "Tuna", 2, 20);
 var animal3 = new Animal("Cow", "Hera", "muh", "Gras", 10, 200);
 var animal4 = new Animal("Pig", "Ares", "oing", "Junk", 15, 230);
-var animal5 = new Animal("Sheep", "Hermes", "meh", "Hay", 5, 100);
+var animal5 = new Animal("Sheep", "Kratos", "meh", "Hay", 5, 100);
 var foodDisplay;
 var animalDisplay;
 var restartDay;
@@ -29,7 +29,7 @@ function handleLoad(_event) {
     animalDisplay = document.getElementById("animals");
     restartDay = document.getElementById("restart");
     foodDisplay.innerHTML = animal1.food() + animal2.food() + animal3.food() + animal4.food() + animal5.food();
-    document.getElementById("restart").addEventListener("click", dog);
+    restartDay.addEventListener("click", dog);
     setTimeout(dog, 1000);
     function dog() {
         restartDay.style.display = "none";
