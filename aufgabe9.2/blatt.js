@@ -3,8 +3,6 @@ var Aufgabe_9_2;
     var Leaf = /** @class */ (function () {
         function Leaf(_positionYOfLeaf, _positionXOfLeaf) {
             console.log("Blattconstructor");
-            this.positionYOfLeaf = _positionYOfLeaf;
-            this.positionXOfLeaf = _positionXOfLeaf;
             this.position = new Aufgabe_9_2.Vector(0, 0);
             this.velocity = new Aufgabe_9_2.Vector(0, 0);
             this.velocity.random(100, 200);

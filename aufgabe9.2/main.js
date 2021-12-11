@@ -2,7 +2,7 @@
 Aufgabe: L09.2 Goldener Herbst
 Name: Herber Gerasimov
 Matrikel: 268382
-Quellen: Prof. Jirka Dell'Oro-Friedls Repository, Fatih Temiz
+Quellen: Prof. Jirka Dell'Oro-Friedls Repository, Fatih Temiz, Kristoffer Müller, Liz Hengsteler
 */
 var Aufgabe_9_2;
 (function (Aufgabe_9_2) {
@@ -31,7 +31,6 @@ var Aufgabe_9_2;
         createCloud();
         createLeaf();
         window.setInterval(update, 20);
-        window.setInterval(update2, 1000);
     }
     function drawBackground() {
         console.log("Background");
@@ -125,8 +124,6 @@ var Aufgabe_9_2;
             leaf.draw();
         }
         cloud.draw();
-    }
-    function update2() {
         cloud.move(1 / 20);
     }
 })(Aufgabe_9_2 || (Aufgabe_9_2 = {}));

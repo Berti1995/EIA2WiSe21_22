@@ -2,14 +2,10 @@ namespace Aufgabe_9_2 {
     export class Leaf {
         position: Vector;
         velocity: Vector;
-        positionYOfLeaf: number;
-        positionXOfLeaf: number;
-
+      
 
         constructor(_positionYOfLeaf: number, _positionXOfLeaf: number) {
             console.log("Blattconstructor");
-            this.positionYOfLeaf = _positionYOfLeaf;
-            this.positionXOfLeaf = _positionXOfLeaf;
             this.position = new Vector(0, 0);
             this.velocity = new Vector(0, 0);
             this.velocity.random(100, 200);
