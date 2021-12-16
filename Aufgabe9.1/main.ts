@@ -1,34 +1,10 @@
-class Animal {
-    animalType: string;
-    name: string;
-    sound: string;
-    foodType: string;
-    foodRation: number;
-    foodAmount: number;
 
-    constructor(a: string, n: string, s: string, t: string, r: number, f: number) {
-        this.animalType = a;
-        this.name = n;
-        this.sound = s;
-        this.foodType = t;
-        this.foodRation = r;
-        this.foodAmount = f;
-    }
-
-    food() {
-        return `${this.foodType} : ${this.foodAmount} Kg `;
-    }
-
-    format() {
-        return `<br>The ${this.animalType} named ${this.name} sings "${this.sound}", and eats ${this.foodRation} Kg of ${this.foodType}.<br>`;
-    }
-}
 window.addEventListener("load", handleLoad);
-let animal1 = new Animal("Dog", "Hadis", "wuff", "Meat", 5, 50);
-let animal2 = new Animal("Cat", "Apollon", "miau", "Tuna", 2, 20);
-let animal3 = new Animal("Cow", "Hera", "muh", "Gras", 10, 200);
-let animal4 = new Animal("Pig", "Ares", "oing", "Junk", 15, 230);
-let animal5 = new Animal("Sheep", "Kratos", "meh", "Hay", 5, 100);
+let animal1: Dog = new Dog("Dog", "Hadis", "wuff", "Meat", 5, 50);
+let animal2: Cat = new Cat ("Cat", "Apollon", "miau", "Tuna", 2, 20);
+let animal3: Cow = new Cow("Cow", "Hera", "muh", "Gras", 10, 200);
+let animal4: Pig = new Pig("Pig", "Ares", "oing", "Junk", 15, 230);
+let animal5: Sheep = new Sheep("Sheep", "Kratos", "meh", "Hay", 5, 100);
 
 let foodDisplay: HTMLDivElement;
 let animalDisplay: HTMLDivElement;
@@ -39,42 +15,47 @@ function handleLoad(_event: Event): void {
     foodDisplay = <HTMLDivElement>document.getElementById("food");
     animalDisplay = <HTMLDivElement>document.getElementById("animals");
     restartDay = <HTMLButtonElement>document.getElementById("restart")
-    foodDisplay.innerHTML = animal1.food() + animal2.food() + animal3.food() + animal4.food() + animal5.food();
-    restartDay.addEventListener("click", dog);
+    foodDisplay.innerHTML = animal1.eat() + animal2.eat() + animal3.eat() + animal4.eat() + animal5.eat();
+    restartDay.addEventListener("click", handleLoad);
     setTimeout(dog, 1000);
+    setTimeout(cat, 2000);
+    setTimeout(cow, 3000);
+    setTimeout(pig, 4000);
+    setTimeout(sheep, 5000);
+}
 
     function dog(): void {
         restartDay.style.display = "none";
         animal1.foodAmount = animal1.foodAmount - animal1.foodRation;
-        animalDisplay.innerHTML = animal1.format();
+        animalDisplay.innerHTML = animal1.sing() +  animal1.doSpecialAction();
         updateFood();
-        setTimeout(cat, 1000); 
+         
     }
     function cat(): void {
         animal2.foodAmount = animal2.foodAmount - animal2.foodRation;
-        animalDisplay.innerHTML += animal2.format();
+        animalDisplay.innerHTML += animal2.sing() +  animal2.doSpecialAction();
         updateFood();
-        setTimeout(cow, 1000);
+        
     }
     function cow(): void {
         animal3.foodAmount = animal3.foodAmount - animal3.foodRation;
-        animalDisplay.innerHTML += animal3.format();
+        animalDisplay.innerHTML += animal3.sing() +  animal3.doSpecialAction();
         updateFood();
-        setTimeout(pig, 1000);
+        
     }
     function pig(): void {
         animal4.foodAmount = animal4.foodAmount - animal4.foodRation;
-        animalDisplay.innerHTML += animal4.format();
+        animalDisplay.innerHTML += animal4.sing() +  animal4.doSpecialAction();
         updateFood();
-        setTimeout(sheep, 1000);
+        
     }
     function sheep(): void {
         animal5.foodAmount = animal5.foodAmount - animal5.foodRation;
-        animalDisplay.innerHTML += animal5.format();
+        animalDisplay.innerHTML += animal5.sing() +  animal5.doSpecialAction();
         restartDay.style.display = "inline";
         updateFood();
     }
     function updateFood(): void{
-        foodDisplay.innerHTML = animal1.food() + animal2.food() + animal3.food() + animal4.food() + animal5.food();
+        foodDisplay.innerHTML = animal1.eat() + animal2.eat() + animal3.eat() + animal4.eat() + animal5.eat();
     }
-}
+
