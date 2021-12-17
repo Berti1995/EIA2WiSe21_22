@@ -1,6 +1,6 @@
 window.addEventListener("load", handleLoad);
 var animal1 = new Dog("Dog", "Hadis", "wuff", "Meat", 5, 50);
-var animal2 = new Cat("Cat", "Apollon", "miau", "Tuna", 2, 20);
+var animal2 = new Cat("Cat", "Apollon", "miau", "Tuna", 2, 40);
 var animal3 = new Cow("Cow", "Hera", "muh", "Gras", 10, 200);
 var animal4 = new Pig("Pig", "Ares", "oing", "Junk", 15, 230);
 var animal5 = new Sheep("Sheep", "Kratos", "meh", "Hay", 5, 100);
